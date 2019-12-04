@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Imagen from './Image';
-import Pagination from './pagination';
 
 class Results extends Component {
 
@@ -11,21 +10,17 @@ class Results extends Component {
                 <React.Fragment>
                     <div className="col-12 p-5 row" >
                         {img.map((im,index) =>(
-                            <Imagen key={index} imagen={im} />
-                        ))
-                        }
+                            <Imagen key={index} imagen={im}  />
+                        ))}
                     </div>                    
                 </React.Fragment>
             );
-
-        }
-            
-
+        }           
     }
     render(){
         return (
             <React.Fragment>
-                    {this.MostrarResultado()}
+                {this.MostrarResultado()}
             </React.Fragment>
             
         );

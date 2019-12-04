@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import { Link } from 'react-router-dom';
-import './Login.css';
+import React,{Component} from 'react';
+import { Link } from 'react-router-dom'
+import './login.css';
 import axios from 'axios';
 import SweetAlert from 'sweetalert2-react';
+import constants from '../../Constants';
 
 class Login2 extends Component {
 
@@ -25,11 +26,11 @@ class Login2 extends Component {
     let user = this.usernameRef.current.value;
     let pass = this.passwordRef.current.value;
 
-    axios.post(`http://127.0.0.1:8000/User/logIn`, { username: user, password: pass })
+    axios.post(`${constants.Api}/User/logIn`, { username: user, password: pass })
       .then(response => {
-        window.location.href = `/dashboard?userid=${response.data.Data[0].id}` ;
+        window.location.href = `/Board?userid=${response.data.Data[0].id}` ;
       }).catch(function (err) {
-        self.setState({ show: true, message: err.response });
+        self.setState({ show: true, message:'Incorrect username or password'});
       });
   };
 
@@ -53,10 +54,14 @@ class Login2 extends Component {
                 <button onClick={this.UserValidate}>Login</button>
               </Link>
             </div>
-            <small className="createAccount">Already Have an Account?</small>
+            <Link to='/Signup'>
+                <small className="createAccount">Already Have an Account?</small>
+            </Link>
+            
             <SweetAlert
               show={this.state.show}
               title="Register"
+              type= "warning"
               icon="error"
               text={this.state.message}
               onConfirm={() => this.setState({ show: false })}

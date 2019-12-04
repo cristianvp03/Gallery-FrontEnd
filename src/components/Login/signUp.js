@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import './Login.css';
+import { Link } from 'react-router-dom'
+import './login.css';
 import axios from 'axios';
 import SweetAlert from 'sweetalert2-react';
+import constants from '../../Constants';
 
 class Signup extends Component {
 
@@ -27,7 +29,7 @@ class Signup extends Component {
         let display = this.displayRef.current.value;
 
 
-        axios.post(`http://127.0.0.1:8000/User/singUp`,{username:user, password:pass,displayname:display})
+        axios.post(`${constants.Api}/User/singUp`,{username:user, password:pass,displayname:display})
         .then(response =>{            
             self.setState({ show: true, message:response.data.Data[0]});            
          }).catch(function (err){        
@@ -56,7 +58,10 @@ class Signup extends Component {
                 </div>
                 <div className="createAccount">
                     <button onClick={this.Register}>Create Account</button>
-                    <small>Already Have an Account?</small>
+                    <Link to='/'>
+                        <small>Home</small>
+                    </Link>
+                    
                 </div>
                 {/* <p><strong>Error: {this.errorMessage}</strong></p> */}
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import './welcome.css';
-import News from './new1';
+import News from './info';
 
 class Welcome extends Component {
  
@@ -11,7 +11,7 @@ class Welcome extends Component {
       <div> 
           <div className="wrapper">                   
               <div className="form-wrapper">
-              <h1>welcome to your gallery!</h1>  
+              <h1>Welcome to your gallery!</h1>  
                     <h4 className="mt-4">Relive your best moments.</h4>                
                     <h4 className="mt-4">Search, create your own gallery and others.</h4>  
                     <Link to='/Login'>

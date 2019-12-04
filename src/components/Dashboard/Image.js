@@ -1,12 +1,14 @@
 import React,{Component} from 'react'
 import axios from 'axios';
+import constants from '../../Constants'
 
 var __id='';
 var __user_id='';
 var __name='';
+var prueba=[];
 var removeImage = (e) =>{    
     e.preventDefault();
-    const urlRemImg =`http://192.168.1.4:3020/Photo?idPhoto=${__id}&userid=${__user_id}&name=${__name}`;
+    const urlRemImg =`${constants.Api}/Photo?idPhoto=${__id}&userid=${__user_id}&name=${__name}`;
     axios.delete(urlRemImg)
         .then(response => {
             console.log("Image Remove Successfully");            
@@ -18,6 +20,7 @@ var removeImage = (e) =>{
 }
 
 const Imagen = props =>{
+    prueba.push(props.imagen);
     const {url,name,user_id,_id} = props.imagen;
     __id=_id;
     __user_id=user_id;
