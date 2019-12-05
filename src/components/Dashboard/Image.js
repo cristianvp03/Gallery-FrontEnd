@@ -31,7 +31,7 @@ const Imagen = props =>{
             <div className="card">
                 <img src={url}  className="card-img-top" width="250px" height="250px" />
                 <div className="card-body">
-                    <a href={url} className="btn btn-primary btn-block">See Image</a>
+                    <a href={url} className="btn btn-primary btn-block">Detail Image</a>
                     <button onClick={removeImage} className="btn btn-danger btn-block">Remove Image</button>
                 </div>
             </div>

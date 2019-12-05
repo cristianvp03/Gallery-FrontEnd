@@ -62,7 +62,7 @@ class Board extends Component {
         return (
             <React.Fragment>
                 <Link to='/'>
-                    <button type="button" class="btn btn-info">logout</button>
+                    <button type="button" class="btn btn-info">Logout</button>
                 </Link>
                 <a>  Welcome: {this.state.displayName}</a>
 

@@ -36,12 +36,9 @@ class dashboard extends Component {
         swal("you must upload an image", "Error Upload", "error");
       }
       
-
-      
-
      }
 
-     /**Cristian */
+     
     handlerData= e =>{
        e.preventDefault();
        
@@ -56,7 +53,7 @@ class dashboard extends Component {
     return (
       <React.Fragment>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="/">Galerry Photos</a>
+            <a className="navbar-brand" href="/">Gallery Photos</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>        
@@ -69,14 +66,12 @@ class dashboard extends Component {
             <div className="collapse navbar-collapse float-right" id="navbarSupportedContent">
               <form className="form-inline my-2 my-lg-0 float-right" enctype="multipart/form-data"
               onSubmit={this.LoadImage} method="post" action={constants.Api+"/Photo?userid=5de363ed450dc32fbc6f7a14"} enctype="multipart/form-data" >
-                <input type="file" multiple="multiple" name="filename" ref={this.fileRef}/>
-                <button className="btn btn-info" placeholder="ss" type="submit">Upload</button>
-              </form>
+                <a className="color:red">Select two or more images...</a>
+                <input type="file" multiple="multiple" name="filename" ref={this.fileRef}/>                
+                <button className="btn btn-info" placeholder="ss" type="submit">Upload</button>                
+              </form>            
             </div>
         </nav>
-
-
-
 
       </React.Fragment>
     )}
