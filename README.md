@@ -23,11 +23,10 @@ when entering the web, you must create an account to be able to log in and uploa
 
 ## Built with 🛠️
 
-_Tools_
+_Menciona las herramientas que utilizaste para crear tu proyecto_
 
 * [ReactJS](https://es.reactjs.org/) 
 * [Bootstrap](https://getbootstrap.com/) 
-* [sweetalert](https://sweetalert.js.org/) 
 
 ---
 ⌨️ (https://github.com/cristianvp03) :D

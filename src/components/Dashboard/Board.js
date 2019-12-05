@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import NavBar from './NavBar'
 import Results from './Results'
 import axios from 'axios';
@@ -7,7 +8,7 @@ const constants = require('../../Constants');
 class Board extends Component {
 
     state = {
-        term:'',
+        term: '',
         user_id: '',
         displayName: '',
         lstImage: []
@@ -19,10 +20,10 @@ class Board extends Component {
         this.loadImage();
     }
 
-    loadImage = (nameFilter='') => {
+    loadImage = (nameFilter = '') => {
         var urlParams = new URLSearchParams(window.location.search);
         var _id = urlParams.get('userid');
-        const urlLoadImg = nameFilter=='' ? `${constants.Api}/Photo?userid=${_id}` : `${constants.Api}/Photo/GetFilters?userid=${_id}&name=${nameFilter}`;
+        const urlLoadImg = nameFilter == '' ? `${constants.Api}/Photo?userid=${_id}` : `${constants.Api}/Photo/GetFilters?userid=${_id}&name=${nameFilter}`;
 
         axios.get(urlLoadImg)
             .then(response => {
@@ -52,17 +53,21 @@ class Board extends Component {
             });
     }
 
-    
-    
-    filterSearch = term =>this.setState({term:term,page:1},_=>{this.loadImage(term);});
+
+
+    filterSearch = term => this.setState({ term: term, page: 1 }, _ => { this.loadImage(term); });
 
 
     render() {
         return (
             <React.Fragment>
+                <Link to='/'>
+                    <button type="button" class="btn btn-info">logout</button>
+                </Link>
+                <a>  Welcome: {this.state.displayName}</a>
+
                 <NavBar message={this.filterSearch} ></NavBar>
                 <Results data={this.state.lstImage}></Results>
-
             </React.Fragment>
         )
     }

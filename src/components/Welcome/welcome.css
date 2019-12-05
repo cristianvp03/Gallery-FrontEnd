@@ -9,7 +9,7 @@
   }
   
   .form-wrapper {
-    width: 800px;
+    width: 800px !important;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
     box-shadow: 0px 10px 50px #555;
     background-color: #ffffff;
     opacity:95%;  
-    font: 150% sans-serif !important;
+    font: 10% sans-serif !important;
   }
 
   .createAccount {
